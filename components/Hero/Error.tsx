@@ -8,20 +8,29 @@ export default function mainHero({ code, name, message }) {
     }
 
     return (
-        <div className="text-secondary px-4 py-5 text-center mt-5" style={{ backgroundColor: '#040305' }}>
-            <div className="py-5">
-                <h1 className="display-5 fw-bold text-white mb-5">
-                    <span style={{ color: '#ffb6da' }}>
+        <div className="container col-xxl-8 px-4 py-5">
+            <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div className="col-10 col-sm-8 col-lg-6">
+                    <img
+                        src="/icon.png"
+                        className="d-block mx-lg-auto img-fluid"
+                        alt="Bootstrap Themes"
+                        width="250"
+                        height="250"
+                        loading="lazy"
+                    />
+                </div>
+                <div className="col-lg-6">
+                    <h1 className="display-5 fw-bold text-white lh-1 mb-3">
                         Error {code}: {name}
-                    </span>
-                </h1>
-                <div className="col-lg-6 mx-auto">
-                    <p className="fs-5 mb-4 text-grey">{message}</p>
-                    <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    </h1>
+
+                    <p className="lead text-white mb-4">{message}</p>
+                    <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                         <button
                             type="button"
                             onClick={Redirect}
-                            className="btn btn-outline-light btn-lg px-4 me-sm-3 mt-5"
+                            className="btn btn-outline-light btn-lg px-4 me-sm-3"
                             style={{ borderColor: '#ffb6da' }}
                         >
                             Go Back

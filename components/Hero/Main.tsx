@@ -12,17 +12,29 @@ export default function mainHero() {
     }
 
     return (
-        <div className="text-secondary px-4 py-5 text-center" style={{ backgroundColor: '#040305' }}>
-            <div className="py-5">
-                <h1 className="display-5 fw-bold text-white">
-                    <span style={{ color: '#ffb6da' }}>Burn Book</span>: A Digital Version
-                </h1>
-                <div className="col-lg-6 mx-auto">
-                    <p className="fs-5 mb-4 text-grey mt-5">
-                        We decided to bring to live the burn book from mean girls, because honestly I think we all need
-                        something like it lol.
+        <div className="container col-xxl-8 px-4 py-5">
+            <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div className="col-10 col-sm-8 col-lg-6">
+                    <img
+                        src="/icon.png"
+                        className="d-block mx-lg-auto img-fluid"
+                        alt="Bootstrap Themes"
+                        width="250"
+                        height="250"
+                        loading="lazy"
+                    />
+                </div>
+                <div className="col-lg-6">
+                    <h1 className="display-5 fw-bold text-white lh-1 mb-3">Burn Book</h1>
+                    <p className="lead text-white">
+                        eBurnBook is a social media platform for people to share stories specifically meant for tea
+                        spilling. The idea comes from the iconic movie, <i>Mean Girls</i>.
                     </p>
-                    <div className="d-grid gap-2 d-sm-flex justify-content-sm-center mt-5">
+                    <p className="lead text-white mb-5">
+                        Keep in mind that this site is not meant to endorce bullying in any way. Visiters who constantly
+                        leave hatespeech will be banned.
+                    </p>
+                    <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                         <button
                             type="button"
                             onClick={createPost}
