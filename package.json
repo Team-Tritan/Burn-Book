@@ -1,5 +1,7 @@
 {
   "name": "burnbook",
+  "description": "Mass shit-talking",
+  "author": "Dylan James <github/dylanjamesdev>",
   "version": "0.1.0",
   "private": true,
   "scripts": {
