@@ -8,7 +8,7 @@ export default function NavMenu() {
         <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
             <Container>
                 <Navbar.Brand style={{ color: '#ff69ff' }} href="/">
-                    <Image height="100px" width="100px" src="/icon.png" />
+                    <Image height="65px" width="65px" src="/icon.png" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
