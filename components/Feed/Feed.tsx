@@ -31,7 +31,7 @@ export async function createPost() {
     const delete_keyword = random;
 
     const response = await axios.post('/api/posts/create', { content, delete_keyword }).catch((err) => {
-        return console.log(err);
+        return console.error(err);
     });
 
     return returnNotification('✅ Successfully posted.');
