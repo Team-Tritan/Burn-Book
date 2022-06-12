@@ -4,9 +4,6 @@ import { useRouter } from 'next/router';
 import Navbar from '../../components/Nav/Navbar';
 
 const viewFeed = async () => {
-    const router = useRouter();
-    const { id } = router.query;
-
     const res = await fetch(`/api/posts/fetch?limit=50`);
     const api = await res.json();
 
