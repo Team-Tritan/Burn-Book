@@ -6,6 +6,7 @@ import Navbar from '../../components/Nav/Navbar';
 import Post from '../../components/Feed/SinglePost';
 import Error from '../../components/Hero/Error';
 import Spinner from '../../components/Feed/Spinner';
+import { title } from 'process';
 
 export default function viewPost() {
     // Use the router to grab req.query
@@ -53,14 +54,11 @@ export default function viewPost() {
             </>
         );
     }
-
-    if (!isLoading) {
-        // Return UI, passing data to Post component
-        return (
-            <>
-                <Navbar />
-                <Post post={postData} />
-            </>
-        );
-    }
+    // Return UI, passing data to Post component
+    return (
+        <>
+            <Navbar />
+            <Post post={postData} />
+        </>
+    );
 }
