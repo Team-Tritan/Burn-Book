@@ -1,4 +1,5 @@
 'use strict';
+
 import Navbar from '../components/Nav/Navbar';
 import ErrorHero from '../components/Hero/Error';
 

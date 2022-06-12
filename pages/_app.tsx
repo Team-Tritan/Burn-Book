@@ -1,5 +1,8 @@
+'use strict';
+
 //import "../styles/globals.css";
-import { SSRProvider } from '@react-aria/ssr';
+import SSRProvider from 'react-bootstrap/SSRProvider';
+
 
 function BurnBook({ Component, pageProps }) {
     return (

@@ -12,11 +12,11 @@ export default function mainHero({ code, name, message }) {
             <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div className="col-10 col-sm-8 col-lg-6">
                     <img
-                        src="/icon.png"
+                        src="/error.png"
                         className="d-block mx-lg-auto img-fluid"
                         alt="Bootstrap Themes"
-                        width="250"
-                        height="250"
+                        width="300"
+                        height="300"
                         loading="lazy"
                     />
                 </div>

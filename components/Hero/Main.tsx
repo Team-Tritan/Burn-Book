@@ -30,7 +30,7 @@ export default function mainHero() {
                         eBurnBook is a social media platform for people to share stories specifically meant for tea
                         spilling. The idea comes from the iconic movie, <i>Mean Girls</i>.
                     </p>
-                    <p className="lead text-white mb-5">
+                    <p className="lead text-white mb-3">
                         Keep in mind that this site is not meant to endorce bullying in any way. Visiters who constantly
                         leave hatespeech will be banned.
                     </p>
@@ -38,19 +38,15 @@ export default function mainHero() {
                         <button
                             type="button"
                             onClick={createPost}
-                            className="btn btn-outline-light btn-lg px-4 me-sm-3"
-                            style={{ borderColor: '#ffb6da' }}
+                            className="btn btn-light px-4 me-lg-5"
+                            style={{ borderColor: '#ffb6da', backgroundColor: '#ffb6da' }}
                         >
                             Create Post
                         </button>
-                        <button
-                            type="button"
-                            onClick={viewFeed}
-                            className="btn btn-outline-light btn-lg px-4"
-                            style={{ borderColor: '#ffb6da' }}
-                        >
+
+                        <a onClick={viewFeed} className="px-4 py-2" style={{ textDecoration: 'none', color: 'white' }}>
                             View Feed
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
