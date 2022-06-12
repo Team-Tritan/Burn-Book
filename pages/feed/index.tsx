@@ -10,7 +10,7 @@ export default function viewFeed() {
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`/api/posts/fetch?limit=50/`);
+            const response = await fetch(`/api/posts/fetch?limit=3`);
             const newData = await response.json();
             setData(newData);
             setIsLoading(false);

@@ -1,6 +1,7 @@
 'use strict';
 
 import Router from 'next/router';
+import Comments from './Comments';
 
 const RecentFeed = ({ post }) => {
     function reportPost() {
@@ -40,9 +41,12 @@ const RecentFeed = ({ post }) => {
                             >
                                 <div className="feed-text px-2">
                                     <h6 className="mt-2" style={{ color: '#ffb6da' }} onClick={reportPost}>
-                                        Report this post
+                                        Report
                                     </h6>
                                 </div>
+
+                                <Comments />
+
                                 <div className="feed-icon px-2">
                                     <i className="fa fa-long-arrow-up text-black-50"></i>
                                 </div>
