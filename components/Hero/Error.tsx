@@ -30,8 +30,8 @@ export default function mainHero({ code, name, message }) {
                         <button
                             type="button"
                             onClick={Redirect}
-                            className="btn btn-outline-light btn-lg px-4 me-sm-3"
-                            style={{ borderColor: '#ffb6da' }}
+                            className="btn btn-light px-4 me-lg-5"
+                            style={{ borderColor: '#ffb6da', backgroundColor: '#ffb6da', borderRadius: '.5rem' }}
                         >
                             Go Back
                         </button>
