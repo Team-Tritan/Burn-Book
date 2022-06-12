@@ -8,8 +8,6 @@ const RecentFeed = ({ post }) => {
         return Router.push(`/report?id=${post._id}`);
     }
 
-    console.log(post);
-
     return (
         <>
             <h1 className="text-white text-center ">View Post</h1>
