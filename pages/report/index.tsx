@@ -32,8 +32,11 @@ export default function Report() {
         <>
             <Navbar />
             <Error
-                name="Report Submitted"
-                message="Your report has been successfully submitted and the post has been removed until further review."
+                name={'Report Submitted'}
+                message={
+                    'Your report has been successfully submitted and the post has been removed until further review.'
+                }
+                code={null}
             />
         </>
     );

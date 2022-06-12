@@ -2,7 +2,7 @@
 
 import Router from 'next/router';
 
-const RecentFeed: React.FC<{ post: object }> = ({ post }) => {
+const RecentFeed = ({ post }) => {
     function reportPost() {
         return Router.push(`/report?id=${post._id}`);
     }

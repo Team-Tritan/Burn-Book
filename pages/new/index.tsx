@@ -11,7 +11,7 @@ export default function newPost() {
                         <h1 className="text-white text-center ">New Post</h1>
                         <form action="/api/posts/new" method="POST" className="text-white">
                             <div className="form-group mt-4">
-                                <label for="title">Author Username</label>
+                                <label>Author Username</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -26,7 +26,7 @@ export default function newPost() {
                                 </small>
                             </div>
                             <div className="form-group mt-4">
-                                <label for="content">Post Content</label>
+                                <label>Post Content</label>
                                 <textarea
                                     className="form-control"
                                     id="content"
@@ -37,7 +37,7 @@ export default function newPost() {
                                 />
                             </div>
                             <div className="form-group mt-4">
-                                <label for="title">Delete Keyword</label>
+                                <label>Delete Keyword</label>
                                 <input
                                     type="password"
                                     className="form-control"

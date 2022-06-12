@@ -16,7 +16,7 @@ export default function RecentFeed({ data }) {
                     <div className="col-md-8">
                         <div className="feed p-2">
                             <div
-                                className="d-flex flex-row justify-content-between align-items-center p-2 bg-white border"
+                                className="d-flex flex-row justify-content-between align-items-center p-1 bg-white border"
                                 style={{ borderRadius: '.5rem' }}
                             >
                                 <div className="feed-text px-2">
