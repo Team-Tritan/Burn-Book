@@ -16,7 +16,7 @@ export default function NavMenu() {
                         <Nav.Link href="/">Home</Nav.Link>
                         <Nav.Link href="/about">About</Nav.Link>
                         <Nav.Link href="/feed">View Feed</Nav.Link>
-                        <Nav.Link href="/new">New Post</Nav.Link>
+                        <Nav.Link href="/feed#new">New Post</Nav.Link>
                         <NavDropdown title="Legal" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="/privacy">Privacy Policy</NavDropdown.Item>
                             <NavDropdown.Item href="/tos">Terms of Service</NavDropdown.Item>
