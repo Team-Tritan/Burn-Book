@@ -1,29 +1,26 @@
 'use strict';
 
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import Navbar from '../../components/Nav/Navbar';
 
-const viewPost = async () => {
-    const router = useRouter();
-    const { id } = router.query;
+export default function viewPost() {
+    const [data, setData] = useState(null);
 
-    const res = await fetch(`/api/posts/fetch?id=${id}`);
-    const api = await res.json();
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch(`/api/posts/fetch?limit=50/`);
+            const newData = await response.json();
+            setData(newData);
+        };
+
+        fetchData();
+    });
 
     return (
         <>
             <Navbar />
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
-                        <h1>{api.title}</h1>
-                        <p>{api.content}</p>
-                        <p>{api.createdAt}</p>
-                    </div>
-                </div>
-            </div>
         </>
     );
-};
+}
 
-export default viewPost;

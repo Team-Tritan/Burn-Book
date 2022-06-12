@@ -30,6 +30,7 @@ export default async function newPostAPI(req, res) {
             deletedAt: null,
             reported: false,
             reportedAt: null,
+            postedAt: new Date().toDateString(),
         })
             .save()
             .catch((err) => {
