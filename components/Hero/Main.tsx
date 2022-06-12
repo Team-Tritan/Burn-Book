@@ -4,7 +4,7 @@ import Router from 'next/router';
 
 export default function mainHero() {
     function createPost() {
-        return Router.push('/new');
+        return Router.push('/feed#new');
     }
 
     function viewFeed() {
