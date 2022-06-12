@@ -40,6 +40,7 @@ export default async function fetchPost(req, res) {
                 limit: searchLimit,
                 deleted: false,
             })
+            .sort({ createdAt: -1 }) // this is used to sort
             .catch((err) => {
                 return res.status(500).json({
                     error: true,
