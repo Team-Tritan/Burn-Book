@@ -9,7 +9,7 @@ export default function newPost() {
                 <div className="row">
                     <div className="col-md-8 offset-md-2 mt-4">
                         <h1 className="text-white text-center ">New Post</h1>
-                        <form action="/api/posts/new" method="POST" className="text-white">
+                        <form action="/api/posts/create" method="POST" className="text-white">
                             <div className="form-group mt-4">
                                 <label>Author Username</label>
                                 <input
