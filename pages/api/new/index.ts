@@ -1,7 +1,7 @@
 'use strict';
 
-import dbConnectionInit from '../../libs/database/dbConnection';
-import postModel from '../../libs/database/models/posts';
+import dbConnectionInit from '../../../libs/database/dbConnection';
+import postModel from '../../../libs/database/models/posts';
 
 export default async function newPostAPI(req, res) {
     // Check if post request
