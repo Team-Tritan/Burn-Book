@@ -39,12 +39,12 @@ export default function mainHero() {
                             type="button"
                             onClick={createPost}
                             className="btn btn-light px-4 me-lg-5"
-                            style={{ borderColor: '#ffb6da', backgroundColor: '#ffb6da' }}
+                            style={{ borderColor: '#ffb6da', backgroundColor: '#ffb6da', borderRadius: '.5rem' }}
                         >
                             Create Post
                         </button>
 
-                        <a onClick={viewFeed} className="px-4 py-2" style={{ textDecoration: 'none', color: 'white' }}>
+                        <a onClick={viewFeed} className="px-2 py-2" style={{ textDecoration: 'none', color: 'white' }}>
                             View Feed
                         </a>
                     </div>

@@ -3,6 +3,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Navbar from '../../components/Nav/Navbar';
+import Post from '../../components/Feed/Post';
 
 export default function viewPost() {
     const [data, setData] = useState(null);
@@ -20,7 +21,7 @@ export default function viewPost() {
     return (
         <>
             <Navbar />
+            <Post data={data} />
         </>
     );
 }
-
