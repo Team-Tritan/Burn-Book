@@ -27,7 +27,7 @@ export async function createPost() {
         return returnNotification("❌ You can't submit a blank post.");
     }
 
-    const random = Math.floor(Math.random() * 10000);
+    const random = Math.floor(Math.random() * 1000000000000000000000000);
     const delete_keyword = random;
 
     const response = await axios.post('/api/posts/create', { content, delete_keyword }).catch((err) => {
