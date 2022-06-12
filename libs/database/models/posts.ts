@@ -18,10 +18,6 @@ const postModel = new mongoose.Schema({
         default: Date.now,
         required: true,
     },
-    delete_keyword: {
-        type: String,
-        required: true,
-    },
     deleted: {
         type: Boolean,
         default: false,
