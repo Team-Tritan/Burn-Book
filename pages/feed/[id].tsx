@@ -3,8 +3,9 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Navbar from '../../components/Nav/Navbar';
-import Post from '../../components/Feed/Post';
+import Post from '../../components/Feed/SinglePost';
 import Error from '../../components/Hero/Error';
+import Spinner from '../../components/Feed/Spinner';
 
 export default function viewPost() {
     // Use the router to grab req.query
@@ -45,14 +46,21 @@ export default function viewPost() {
 
     // Return nav bar if loading
     if (isLoading) {
-        return <Navbar />;
+        return (
+            <>
+                <Navbar />
+                <Spinner />
+            </>
+        );
     }
 
-    // Return UI, passing data to Post component
-    return (
-        <>
-            <Navbar />
-            <Post post={postData} />
-        </>
-    );
+    if (!isLoading) {
+        // Return UI, passing data to Post component
+        return (
+            <>
+                <Navbar />
+                <Post post={postData} />
+            </>
+        );
+    }
 }

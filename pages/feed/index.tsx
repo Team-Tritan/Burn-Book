@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Navbar from '../../components/Nav/Navbar';
 import Feed from '../../components/Feed/Feed';
+import Spinner from '../../components/Feed/Spinner';
 
 export default function viewFeed() {
     // useState to manage data fetching with useEffect
@@ -24,7 +25,12 @@ export default function viewFeed() {
 
     // Return nav bar if loading
     if (isLoading) {
-        return <Navbar />;
+        return (
+            <>
+                <Navbar />
+                <Spinner />
+            </>
+        );
     }
 
     // Return UI, passing data to Feed component
