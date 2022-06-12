@@ -10,26 +10,28 @@ export default function RecentFeed({ data }) {
     return (
         <>
             <h1 className="text-white text-center ">Recent Feed</h1>
-            {data &&
-                data.map((post) => (
-                    <div className="container mt-4 mb-5 ">
-                        <div className="d-flex justify-content-center row">
-                            <div className="col-md-8">
-                                <div className="feed p-2">
-                                    <div
-                                        className="d-flex flex-row justify-content-between align-items-center p-2 bg-white border"
-                                        style={{ borderRadius: '.5rem' }}
-                                    >
-                                        <div className="feed-text px-2">
-                                            <h6 className="text-black-50 mt-2" onClick={createPost}>
-                                                What's on your mind?
-                                            </h6>
-                                        </div>
-                                        <div className="feed-icon px-2">
-                                            <i className="fa fa-long-arrow-up text-black-50"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bg-white border mt-2" style={{ borderRadius: '.5rem' }}>
+
+            <div className="container mb-3 ">
+                <div className="d-flex justify-content-center row">
+                    <div className="col-md-8">
+                        <div className="feed p-2">
+                            <div
+                                className="d-flex flex-row justify-content-between align-items-center p-2 bg-white border"
+                                style={{ borderRadius: '.5rem' }}
+                            >
+                                <div className="feed-text px-2">
+                                    <h6 className="text-black-50 mt-2" onClick={createPost}>
+                                        What's on your mind?
+                                    </h6>
+                                </div>
+                                <div className="feed-icon px-2">
+                                    <i className="fa fa-long-arrow-up text-black-50"></i>
+                                </div>
+                            </div>
+
+                            {data &&
+                                data.map((post) => (
+                                    <div className="bg-white border mt-3" style={{ borderRadius: '.5rem' }}>
                                         <div>
                                             <div className="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
                                                 <div className="d-flex flex-row align-items-center feed-text px-2">
@@ -60,11 +62,11 @@ export default function RecentFeed({ data }) {
                                             </a>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                ))}
                         </div>
                     </div>
-                ))}
+                </div>
+            </div>
         </>
     );
 }

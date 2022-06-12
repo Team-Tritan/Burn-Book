@@ -16,6 +16,7 @@ export default function newPost() {
                                     type="text"
                                     className="form-control"
                                     id="title"
+                                    name="title"
                                     aria-describedby="titleHelp"
                                     placeholder="Enter title"
                                     required
@@ -30,6 +31,7 @@ export default function newPost() {
                                 <textarea
                                     className="form-control"
                                     id="content"
+                                    name="content"
                                     placeholder="What's on your mind?"
                                     required
                                     style={{ borderRadius: '.5rem' }}
