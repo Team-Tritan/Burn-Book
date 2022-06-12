@@ -31,7 +31,7 @@ export default function RecentFeed({ data }) {
 
                             {data &&
                                 data.map((post) => (
-                                    <div className="bg-white border mt-3" style={{ borderRadius: '.5rem' }}>
+                                    <div className="bg-white border mt-2" style={{ borderRadius: '.5rem' }}>
                                         <div>
                                             <div className="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
                                                 <div className="d-flex flex-row align-items-center feed-text px-2">

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Navbar from '../../components/Nav/Navbar';
-import Recent from '../../components/Feed/Feed';
+import Feed from '../../components/Feed/Feed';
 
 export default function viewFeed() {
     const [data, setData] = useState(null);
@@ -20,7 +20,7 @@ export default function viewFeed() {
     return (
         <>
             <Navbar />
-            <Recent data={data} />
+            <Feed data={data} />
         </>
     );
 }

@@ -11,19 +11,18 @@ export default function newPost() {
                         <h1 className="text-white text-center ">New Post</h1>
                         <form action="/api/posts/new" method="POST" className="text-white">
                             <div className="form-group mt-4">
-                                <label for="title">Post Title</label>
+                                <label for="title">Author Username</label>
                                 <input
                                     type="text"
                                     className="form-control"
                                     id="title"
                                     name="title"
                                     aria-describedby="titleHelp"
-                                    placeholder="Enter title"
-                                    required
+                                    placeholder="Enter @"
                                     style={{ borderRadius: '.5rem' }}
                                 />
                                 <small id="titleHelp" className="form-text text-muted">
-                                    This is the title for your post.
+                                    This is the username of the author of the post.
                                 </small>
                             </div>
                             <div className="form-group mt-4">

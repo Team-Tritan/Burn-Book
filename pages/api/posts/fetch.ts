@@ -11,6 +11,7 @@ export default async function fetchPost(req, res) {
         const post = await postModel
             .findOne({
                 _id: req.query.id,
+                deleted: false,
             })
             .catch(() => {
                 return res.status(500).json({
@@ -37,6 +38,7 @@ export default async function fetchPost(req, res) {
         const posts = await postModel
             .find({
                 limit: searchLimit,
+                deleted: false,
             })
             .catch((err) => {
                 return res.status(500).json({

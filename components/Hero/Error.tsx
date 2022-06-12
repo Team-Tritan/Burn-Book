@@ -22,10 +22,10 @@ export default function mainHero({ code, name, message }) {
                 </div>
                 <div className="col-lg-6">
                     <h1 className="display-5 fw-bold text-white lh-1 mb-3">
-                        Error {code}: {name}
+                        {code ? 'Error ' + code + ':' : ''} {name}
                     </h1>
 
-                    <p className="lead text-white mb-4">{message}</p>
+                    <p className="lead text-white mb-4">{message ? message : ''}</p>
                     <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                         <button
                             type="button"

@@ -13,7 +13,7 @@ export default async function newPostAPI(req, res) {
         const content = req.body.content;
         const delete_keyword = req.body.delete_keyword;
 
-        if (!title || !content || !delete_keyword) {
+        if (!content || !delete_keyword) {
             return res.status(400).json({
                 error: true,
                 code: 400,
@@ -23,7 +23,7 @@ export default async function newPostAPI(req, res) {
 
         new postModel({
             _id: id,
-            title: title,
+            title: title || 'Annonymous',
             content: content,
             delete_keyword: delete_keyword,
             deleted: false,
