@@ -1,39 +1,86 @@
 'use strict';
 
-import Router from 'next/router';
+import axios from 'axios';
 import React, { useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { SpinnerRound } from 'spinners-react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function createPost() {
-    return Router.push('/new');
+// Alert notification laziness
+export async function returnNotification(message) {
+    return toast(`${message}`, {
+        position: 'top-center',
+        style: {
+            background: 'black',
+            borderColor: '#728cd4',
+            color: 'white',
+        },
+    });
 }
 
+// Create post button onClick handler
+export async function createPost() {
+    const content = document.getElementById('new').value;
+
+    if (!content) {
+        return returnNotification("❌ You can't submit a blank post.");
+    }
+
+    const random = Math.floor(Math.random() * 10000);
+    const delete_keyword = random;
+
+    const response = await axios.post('/api/posts/create', { content, delete_keyword }).catch((err) => {
+        return console.log(err);
+    });
+
+    return returnNotification('✅ Successfully posted.');
+}
+
+// Return feed UI with infinate scroll goodness
 export default function RecentFeed({ data }) {
+    // Init state
     const [posts, setPosts] = useState(data);
     const [hasMore, setHasMore] = useState(true);
 
+    // Fetch more posts for endless scrolling component
     const getMorePost = async () => {
         const res = await fetch(`/api/posts/fetch?limit=10`);
         const newPosts = await res.json();
         setPosts((post) => [...post, ...newPosts]);
     };
 
+    // Return UI
     return (
         <>
             <h1 className="text-white text-center ">Recent Feed</h1>
             <div className="container mb-3">
                 <div className="d-flex justify-content-center row">
-                    <div className="col-md-8">
+                    <div className="col-md-8 mt-2">
                         <div className="feed p-2">
                             <div
-                                className="d-flex flex-row justify-content-between align-items-center p-1 bg-white border py-3"
-                                onClick={createPost}
-                                style={{ borderRadius: '.5rem' }}
+                                className="d-flex flex-row justify-content-between align-items-center p-1 bg-white border py-3 mb-3"
+                                style={{ border: 'none', outline: 'none', borderRadius: '.5rem' }}
                             >
-                                <div className="feed-text px-2">
-                                    <h6 className="text-black-50 mt-2">What's on your mind?</h6>
-                                </div>
+                                <input
+                                    className="form-control text-black-50 border-0 outline-0"
+                                    type="text"
+                                    name="new"
+                                    id="new"
+                                    placeholder="What's on your mind?"
+                                ></input>
+
+                                <a
+                                    className="btn btn-light px-4 me-lg-5"
+                                    style={{
+                                        borderColor: '#ffb6da',
+                                        backgroundColor: '#ffb6da',
+                                        borderRadius: '.5rem',
+                                    }}
+                                    onClick={createPost}
+                                >
+                                    Submit
+                                </a>
                                 <div className="feed-icon px-2">
                                     <i className="fa fa-long-arrow-up text-black-50"></i>
                                 </div>
@@ -95,6 +142,7 @@ export default function RecentFeed({ data }) {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </>
     );
 }
