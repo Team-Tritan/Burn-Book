@@ -28,9 +28,8 @@ export async function createPost() {
     }
 
     const random = Math.floor(Math.random() * 1000000000000000000000000);
-    const delete_keyword = random;
 
-    const response = await axios.post('/api/posts/create', { content, delete_keyword }).catch((err) => {
+    const response = await axios.post('/api/posts/create', { content }).catch((err) => {
         return console.error(err);
     });
 
