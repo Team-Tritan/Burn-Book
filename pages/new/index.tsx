@@ -5,7 +5,7 @@ export default function newPost() {
     return (
         <>
             <Navbar />
-            <form action="/api/new" method="POST">
+            <form action="/api/posts/new" method="POST">
                 <div className="form-group">
                     <label htmlFor="title">Title</label>
                     <input type="text" className="form-control" id="title" name="title" />

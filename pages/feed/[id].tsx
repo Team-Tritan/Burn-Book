@@ -7,7 +7,7 @@ const viewPost = async () => {
     const router = useRouter();
     const { id } = router.query;
 
-    const res = await fetch(`/api/fetch?id=${id}`);
+    const res = await fetch(`/api/posts/fetch?id=${id}`);
     const api = await res.json();
 
     return (

@@ -7,7 +7,7 @@ const viewFeed = async () => {
     const router = useRouter();
     const { id } = router.query;
 
-    const res = await fetch(`/api/fetch?limit=50`);
+    const res = await fetch(`/api/posts/fetch?limit=50`);
     const api = await res.json();
 
     const postList = api.map((post) => {
