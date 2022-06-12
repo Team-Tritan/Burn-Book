@@ -3,7 +3,6 @@
 import { useRouter } from 'next/router';
 import Navbar from '../../components/Nav/Navbar';
 import Error from '../../components/Hero/Error';
-import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 export default function Report() {
@@ -12,11 +11,14 @@ export default function Report() {
 
     if (!id) {
         return (
-            <Error
-                name="Report Failure"
-                code="400"
-                message="You have tried to submit a report with an invalid post ID. Please check the URL and try again."
-            />
+            <>
+                <Navbar />
+                <Error
+                    name="Report Failure"
+                    code="400"
+                    message="You have tried to submit a report with an invalid id parameter. Please check the URL and try again."
+                />
+            </>
         );
     }
 

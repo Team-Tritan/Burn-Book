@@ -5,7 +5,10 @@ import Navbar from '../../components/Nav/Navbar';
 import Feed from '../../components/Feed/Feed';
 
 export default function viewFeed() {
+    // useState to manage data fetching with useEffect
     const [data, setData] = useState(null);
+
+    // Lazy page loading
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -17,12 +20,14 @@ export default function viewFeed() {
         };
 
         fetchData();
-    });
+    }, [data]);
 
+    // Return nav bar if loading
     if (isLoading) {
         return <Navbar />;
     }
 
+    // Return UI, passing data to Feed component
     return (
         <>
             <Navbar />

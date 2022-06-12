@@ -4,6 +4,7 @@ import dbConnectionInit from '../../../libs/database/dbConnection';
 import postModel from '../../../libs/database/models/posts';
 
 export default async function fetchPost(req, res) {
+    // Init db
     dbConnectionInit();
 
     // If query is ID, fetch individual post

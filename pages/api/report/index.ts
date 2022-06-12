@@ -4,10 +4,14 @@ import dbConnectionInit from '../../../libs/database/dbConnection';
 import postModel from '../../../libs/database/models/posts';
 
 export default async function newReport(req, res) {
+    // Check if request is POST, if not return a 405.
     if (req.method === 'POST') {
+        // Call to init db
         dbConnectionInit();
 
+        // Process request in db
         let post_id = req.query.id;
+
         if (!post_id) {
             return res.status(400).json({
                 error: true,
@@ -30,8 +34,10 @@ export default async function newReport(req, res) {
             },
         );
 
-        return res.send('Report submitted successfully.');
-    } else if (req.method === 'GET') {
+        // Return 200 to frontend
+        return res.status(200).json({ error: false, status: 200, message: 'Report submitted successfully.' });
+    } else {
+        // Handle GET/other requests
         return res.status(405).json({
             error: true,
             code: 405,
