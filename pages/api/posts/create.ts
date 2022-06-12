@@ -13,10 +13,9 @@ export default async function newPostAPI(req, res) {
         let id = Math.floor(Math.random() * 1000000000000);
         let title = req.body.title;
         let content = req.body.content;
-        let delete_keyword = req.body.delete_keyword;
 
         // If no post content, return error on backend
-        if (!content || !delete_keyword) {
+        if (!content) {
             return res.status(400).json({
                 error: true,
                 code: 400,
@@ -29,12 +28,11 @@ export default async function newPostAPI(req, res) {
             _id: id,
             title: title || 'Annonymous',
             content: content,
-            delete_keyword: delete_keyword,
             deleted: false,
             deletedAt: null,
             reported: false,
             reportedAt: null,
-            postedAt: new Date().toDateString(),
+            createdAt: new Date(),
         })
             .save()
             .catch((err) => {
