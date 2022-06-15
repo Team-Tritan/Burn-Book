@@ -3,7 +3,7 @@
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import Image from 'next/image';
 
-export default function NavMenu() {
+const NavMenu: React.FC = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
             <Container>
@@ -34,4 +34,6 @@ export default function NavMenu() {
             </Container>
         </Navbar>
     );
-}
+};
+
+export default NavMenu;
