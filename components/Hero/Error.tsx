@@ -2,7 +2,7 @@
 
 import Router from 'next/router';
 
-export default function mainHero({ code, name, message }) {
+const ErrorHero: React.FC = ({ code, name, message }) => {
     function Redirect() {
         return Router.push('/');
     }
@@ -40,4 +40,6 @@ export default function mainHero({ code, name, message }) {
             </div>
         </div>
     );
-}
+};
+
+export default ErrorHero;
