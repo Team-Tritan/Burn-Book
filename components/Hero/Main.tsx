@@ -2,7 +2,7 @@
 
 import Router from 'next/router';
 
-export default function mainHero() {
+const MainHero: React.FC = () => {
     function createPost() {
         return Router.push('/feed#new');
     }
@@ -52,4 +52,6 @@ export default function mainHero() {
             </div>
         </div>
     );
-}
+};
+
+export default MainHero;
