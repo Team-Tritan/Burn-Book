@@ -1,14 +1,14 @@
 'use strict';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from '../components/Nav/Navbar';
 import Hero from '../components/Hero/Main';
 
-export default function Home() {
+const Home: React.FC = () => {
     return (
         <>
-            <Navbar />
             <Hero />
         </>
     );
-}
+};
+
+export default Home;
