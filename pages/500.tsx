@@ -1,12 +1,10 @@
 'use strict';
 
-import Navbar from '../components/Nav/Navbar';
 import ErrorHero from '../components/Hero/Error';
 
-export default function ErrorHandler() {
+const Error500: React.FC = () => {
     return (
         <>
-            <Navbar />
             <ErrorHero
                 code={'500'}
                 name={'Internal Server Error'}
@@ -16,4 +14,6 @@ export default function ErrorHandler() {
             />
         </>
     );
-}
+};
+
+export default Error500;
