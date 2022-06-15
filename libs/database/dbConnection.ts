@@ -1,6 +1,6 @@
 'use strict';
 
-import mongoose from 'mongoose';
+import mongoose, { Mongoose } from 'mongoose';
 import { mongoURI } from '../../config';
 
 let cached = global.mongoose;
@@ -9,7 +9,7 @@ if (!cached) {
     cached = global.mongoose = { conn: null, promise: null };
 }
 
-export default async function dbConnectionInit() {
+const dbConnectionInit: any = async () => {
     if (cached.conn) {
         return cached.conn;
     }
@@ -21,4 +21,6 @@ export default async function dbConnectionInit() {
     }
     cached.conn = await cached.promise;
     return cached.conn;
-}
+};
+
+export default dbConnectionInit;
