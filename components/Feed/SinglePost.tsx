@@ -4,14 +4,14 @@ import Router from 'next/router';
 import Comments from './Comments';
 
 const RecentFeed = ({ post }) => {
-    function reportPost() {
+    const reportPost = () => {
         return Router.push(`/report?id=${post._id}`);
-    }
+    };
 
     return (
         <>
             <h1 className="text-white text-center ">View Post</h1>
-            <div className="container mt-4 mb-2 ">
+            <div className="container mt-4 mb-2">
                 <div className="d-flex justify-content-center row">
                     <div className="col-md-8">
                         <div className="feed p-2">
