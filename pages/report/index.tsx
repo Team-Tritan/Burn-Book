@@ -1,18 +1,16 @@
 'use strict';
 
 import { useRouter } from 'next/router';
-import Navbar from '../../components/Nav/Navbar';
 import Error from '../../components/Hero/Error';
 import axios from 'axios';
 
-export default function Report() {
+const ReportPost: React.FC = () => {
     const router = useRouter();
     const { id } = router.query;
 
     if (!id) {
         return (
             <>
-                <Navbar />
                 <Error
                     name="Report Failure"
                     code="400"
@@ -32,7 +30,6 @@ export default function Report() {
 
     return (
         <>
-            <Navbar />
             <Error
                 name={'Report Submitted'}
                 message={
@@ -42,4 +39,6 @@ export default function Report() {
             />
         </>
     );
-}
+};
+
+export default ReportPost;

@@ -2,13 +2,12 @@
 
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Navbar from '../../components/Nav/Navbar';
 import Post from '../../components/Feed/SinglePost';
 import Error from '../../components/Hero/Error';
 import Spinner from '../../components/Feed/Spinner';
-import { title } from 'process';
+import axios from 'axios';
 
-export default function viewPost() {
+const ViewPost: React.FC = () => {
     // Use the router to grab req.query
     const router = useRouter();
     const { id } = router.query;
@@ -16,28 +15,26 @@ export default function viewPost() {
     // Use useState to manage data fetching with useEffect
     const [postData, setPostData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
+        if (!id) return;
+
         const fetchData = async () => {
             // Reach out to the API to get the post data
-            const response = await fetch(`/api/posts/fetch?id=${id}`);
-
-            // If the post doesn't exist, return an error
-            if (response.status !== 200) {
-                return (
-                    <Error
-                        name="Post Not Found"
-                        code="404"
-                        message="The post you are trying to view does not exist. Please check the URL and try again."
-                    />
-                );
-            }
-
-            // Format into JSON
-            const newData = await response.json();
+            const response = await axios
+                .get(`/api/posts/fetch?id=${id}`)
+                .then((res) => res.data)
+                .catch((err) => {
+                    if (err?.response?.data) {
+                        setError(err.response.data.error);
+                    } else {
+                        setError('Failed to get data!');
+                    }
+                });
 
             // Set the data into state, disable isLoading
-            setPostData(newData);
+            setPostData(response);
             setIsLoading(false);
         };
 
@@ -49,16 +46,25 @@ export default function viewPost() {
     if (isLoading) {
         return (
             <>
-                <Navbar />
                 <Spinner />
             </>
         );
     }
+    if (error)
+        return (
+            <Error
+                name="Post Not Found"
+                code="404"
+                message="The post you are trying to view does not exist. Please check the URL and try again."
+            />
+        );
+
     // Return UI, passing data to Post component
     return (
         <>
-            <Navbar />
             <Post post={postData} />
         </>
     );
-}
+};
+
+export default ViewPost;

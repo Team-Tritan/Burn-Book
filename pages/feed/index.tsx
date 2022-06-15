@@ -1,43 +1,25 @@
 'use strict';
 
 import { useEffect, useState } from 'react';
-import Navbar from '../../components/Nav/Navbar';
 import Feed from '../../components/Feed/Feed';
 import Spinner from '../../components/Feed/Spinner';
 
-export default function viewFeed() {
-    // useState to manage data fetching with useEffect
-    const [data, setData] = useState(null);
-
-    // Lazy page loading
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch(`/api/posts/fetch?limit=3`);
-            const newData = await response.json();
-            setData(newData);
-            setIsLoading(false);
-        };
-
-        fetchData();
-    }, [data]);
-
-    // Return nav bar if loading
-    if (isLoading) {
-        return (
-            <>
-                <Navbar />
-                <Spinner />
-            </>
-        );
-    }
-
+const viewFeed = ({ posts }) => {
     // Return UI, passing data to Feed component
     return (
         <>
-            <Navbar />
-            <Feed data={data} />
+            <Feed data={posts} />
         </>
     );
-}
+};
+
+viewFeed.getInitialProps = async (ctx: any) => {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/posts/fetch?limit=3`);
+    const postData = await response.json();
+
+    return {
+        posts: postData,
+    };
+};
+
+export default viewFeed;

@@ -30,7 +30,7 @@ export default async function fetchPost(req, res) {
         }
 
         if (post.reported) {
-            return res.status(202).json({
+            return res.status(418).json({
                 error: true,
                 code: 418,
                 message: 'This post has been removed due to violating our terms of service.',
