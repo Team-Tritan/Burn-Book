@@ -19,30 +19,32 @@ const ViewPost = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    if (!id) return;
+    useEffect(() => {
+        if (!id) return;
 
-    const fetchData = async () => {
-        // Reach out to the API to get the post data
-        const response = await axios
-            .get(`/api/posts/fetch?id=${id}`)
-            .then((res) => res.data)
-            .catch((err) => {
-                if (err?.response?.data) {
-                    setError(err.response.data.error);
-                } else {
-                    setError('Failed to get data!');
-                }
-            });
+        const fetchData = async () => {
+            // Reach out to the API to get the post data
+            const response = await axios
+                .get(`/api/posts/fetch?id=${id}`)
+                .then((res) => res.data)
+                .catch((err) => {
+                    if (err?.response?.data) {
+                        setError(err.response.data.error);
+                    } else {
+                        setError('Failed to get data!');
+                    }
+                });
 
-        // Set the data into state, disable isLoading
-        setPostData(response);
-        setComments(response.comments);
-        setIsLoading(false);
+            // Set the data into state, disable isLoading
+            setPostData(response);
+            setComments(response.comments);
+            setIsLoading(false);
+        };
 
-        useEffect(() => {
-            fetchData();
-        }, []);
-    };
+        // Init
+        fetchData();
+    }, [id, setPostData, comments, setComments, setIsLoading, setError]);
+
     // Return nav bar if loading
     if (isLoading) {
         return (
