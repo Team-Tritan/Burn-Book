@@ -2,7 +2,7 @@
 
 import ErrorHero from '../components/Hero/Error';
 
-const Error500: React.FC = () => {
+const Error500 = () => {
     return (
         <>
             <ErrorHero

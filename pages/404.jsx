@@ -2,7 +2,7 @@
 
 import ErrorHero from '../components/Hero/Error';
 
-const Error404: React.FC = () => {
+const Error404 = () => {
     return (
         <>
             <ErrorHero
