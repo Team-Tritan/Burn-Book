@@ -1,7 +1,7 @@
 'use strict';
 
 import Router from 'next/router';
-import Comments from './Comments';
+import Comments from './CreateComment';
 
 const RecentFeed = ({ post }) => {
     const reportPost = () => {
@@ -43,7 +43,7 @@ const RecentFeed = ({ post }) => {
                                     </h6>
                                 </div>
 
-                                <Comments />
+                                <Comments post={post} />
 
                                 <div className="feed-icon px-2">
                                     <i className="fa fa-long-arrow-up text-black-50"></i>

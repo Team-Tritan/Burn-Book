@@ -34,6 +34,9 @@ const postModel = new mongoose.Schema({
         type: Date,
         default: null,
     },
+    comments: {
+        type: Array,
+    }
 });
 
 export default mongoose.models.Posts || mongoose.model('Posts', postModel);

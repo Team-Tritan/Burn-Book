@@ -6,6 +6,7 @@ import Post from '../../components/Feed/SinglePost';
 import Error from '../../components/Hero/Error';
 import Spinner from '../../components/Feed/Spinner';
 import axios from 'axios';
+import CommendsFeed from '../../components/Feed/CommentFeed';
 
 const ViewPost: React.FC = () => {
     // Use the router to grab req.query
@@ -14,6 +15,7 @@ const ViewPost: React.FC = () => {
 
     // Use useState to manage data fetching with useEffect
     const [postData, setPostData] = useState(null);
+    const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -35,12 +37,13 @@ const ViewPost: React.FC = () => {
 
             // Set the data into state, disable isLoading
             setPostData(response);
+            setComments(response.comments);
             setIsLoading(false);
         };
 
         // Init
         fetchData();
-    }, [id]);
+    }, [id, setPostData, comments, setComments, setIsLoading, setError]);
 
     // Return nav bar if loading
     if (isLoading) {
@@ -63,6 +66,7 @@ const ViewPost: React.FC = () => {
     return (
         <>
             <Post post={postData} />
+            <CommendsFeed comments={comments} />
         </>
     );
 };
