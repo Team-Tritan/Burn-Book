@@ -13,6 +13,7 @@ export default async function newPostAPI(req, res) {
         let id = Math.floor(Math.random() * 1000000000000);
         let title = req.body.title;
         let content = req.body.content;
+        
 
         // If no post content, return error on backend
         if (!content) {
@@ -20,6 +21,19 @@ export default async function newPostAPI(req, res) {
                 error: true,
                 code: 400,
                 message: 'Missing required field to create post.',
+            });
+        }
+
+        // Check for same exact content
+        let sameContent = await postModel.findOne({
+            content: content
+        });
+
+        if (sameContent){
+            return res.status(400).json({
+                error: true,
+                code: 400,
+                message: 'Post with same content already exists.',
             });
         }
 

@@ -37,14 +37,7 @@ const RecentFeed = ({ data }) => {
             return returnNotification('❌ You are not able to submit blank posts.');
         }
 
-        const res = await axios
-            .post(`/api/posts/create`, createPostData)
-            .then((res) => res.data)
-            .catch((err) => {
-                return console.log(err);
-            });
-
-        console.log(res);
+        const res = await axios.post(`/api/posts/create`, createPostData).then((res) => res.data);
 
         setPosts([res.data, ...posts]);
 
