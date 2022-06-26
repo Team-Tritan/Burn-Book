@@ -1,6 +1,6 @@
 'use strict';
 
-import Script from 'next/Script';
+import Script from 'next/script';
 
 export default function LoadingSpinner() {
     return (
