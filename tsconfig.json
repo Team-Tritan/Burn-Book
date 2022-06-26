@@ -19,9 +19,9 @@
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        "components/Hero/Main.tsx",
+        "components/Hero/Main.jsx",
         "components/Feed/Post.tsx",
-        "components/Feed/Feed.tsx"
-    ],
+        "components/Feed/Feed.jsx"
+, "components/Feed/CreateComment.jsx", "components/Feed/CommentFeed.jsx", "components/Hero/Error.jsx", "components/Feed/Spinner.jsx", "components/Feed/SinglePost.jsx", "libs/database/dbConnection.js", "pages/feed/[id].jsx", "libs/database/models/posts.js", "pages/api/comments/create.js", "pages/_app.jsx", "pages/_document.jsx", "pages/report/index.jsx", "pages/feed/index.jsx", "pages/api/report/index.js", "pages/api/posts/fetch.js", "pages/api/posts/create.js"    ],
     "exclude": ["node_modules"]
 }

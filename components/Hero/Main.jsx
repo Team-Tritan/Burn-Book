@@ -2,7 +2,7 @@
 
 import Router from 'next/router';
 
-const MainHero: React.FC = () => {
+const MainHero = () => {
     function createPost() {
         return Router.push('/feed#new');
     }

@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Alert notification laziness
-const returnNotification = (message: string) => {
+const returnNotification = (message) => {
     return toast(`${message}`, {
         position: 'top-center',
         style: {
@@ -17,7 +17,7 @@ const returnNotification = (message: string) => {
     });
 };
 
-const RecentFeed: React.FC = ({ data }) => {
+const RecentFeed = ({ data }) => {
     // Init state
     const [posts, setPosts] = useState(data);
     const [hasMore, setHasMore] = useState(true);

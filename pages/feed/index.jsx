@@ -13,7 +13,7 @@ const viewFeed = ({ posts }) => {
     );
 };
 
-viewFeed.getInitialProps = async (ctx: any) => {
+viewFeed.getInitialProps = async (ctx) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE}/api/posts/fetch?limit=3`);
     const postData = await response.json();
 

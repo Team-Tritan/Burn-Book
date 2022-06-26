@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Error from '../../components/Hero/Error';
 import axios from 'axios';
 
-const ReportPost: React.FC = () => {
+const ReportPost = () => {
     const router = useRouter();
     const { id } = router.query;
 

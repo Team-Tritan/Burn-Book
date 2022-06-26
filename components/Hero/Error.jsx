@@ -2,7 +2,7 @@
 
 import Router from 'next/router';
 
-const ErrorHero: React.FC = ({ code, name, message }) => {
+const ErrorHero = ({ code, name, message }) => {
     function Redirect() {
         return Router.push('/');
     }

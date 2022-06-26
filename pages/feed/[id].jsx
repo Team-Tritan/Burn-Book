@@ -8,7 +8,7 @@ import Spinner from '../../components/Feed/Spinner';
 import axios from 'axios';
 import CommendsFeed from '../../components/Feed/CommentFeed';
 
-const ViewPost: React.FC = () => {
+const ViewPost = () => {
     // Use the router to grab req.query
     const router = useRouter();
     const { id } = router.query;

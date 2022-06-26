@@ -9,7 +9,7 @@ if (!cached) {
     cached = global.mongoose = { conn: null, promise: null };
 }
 
-const dbConnectionInit: any = async () => {
+const dbConnectionInit = async () => {
     if (cached.conn) {
         return cached.conn;
     }
