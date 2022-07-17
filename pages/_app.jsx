@@ -2,6 +2,7 @@
 
 import SSRProvider from 'react-bootstrap/SSRProvider';
 import Navbar from '../components/Nav/Navbar';
+import Footer from '../components/Nav/Footer';
 
 function BurnBook({ Component, pageProps }) {
     return (
@@ -21,6 +22,7 @@ function BurnBook({ Component, pageProps }) {
                 </div>
             </div>
             <Component {...pageProps} />
+            <Footer />
         </SSRProvider>
     );
 }
