@@ -25,3 +25,5 @@
 [ ] Delete posts (account only)
 
 [ ] Custom page for removed and reported content, rn its blank because headers error
+
+[x] Comments for individual posts

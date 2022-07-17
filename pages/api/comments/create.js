@@ -3,8 +3,9 @@
 import dbConnectionInit from '../../../libs/database/dbConnection';
 import postModel from '../../../libs/database/models/posts';
 
-
 export default async function createComment(req, res) {
+    dbConnectionInit();
+    
     if (req.method === 'POST') {
         if (!req.query.id){
             return res.status(400).json({
