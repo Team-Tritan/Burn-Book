@@ -20,8 +20,8 @@ function BurnBook({ Component, pageProps }) {
                     for feedback or support.
                 </div>
             </div>
-            <Component {...pageProps} />
-        </SSRProvider>
+            <Component {...pageProps} />     
+</SSRProvider>
     );
 }
 
